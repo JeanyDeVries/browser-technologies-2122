@@ -20,27 +20,53 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 
 app.get('/', function (req, res) {
-    res.render('home', {
-
-    })
+    res.render('home', {})
   })
 
 app.get('/makeShirtInfoUser', function (req, res) {
-    res.render('makeShirtInfoUser', {
-
-    })
+    res.render('makeShirtInfoUser', {})
 })
 
 app.get('/makeShirtText', function (req, res) {
-    res.render('makeShirtText', {
-
-    })
+    res.render('makeShirtText', {})
 })
 
 app.get('/makeShirtColor', function (req, res) {
-    res.render('makeShirtColor', {
 
-    })
+    fs.readFile('textShirt.json', 'utf8', function (err, data) {
+        if (err) throw err;
+        let textShirtData = JSON.parse(data);
+  
+        res.render('makeShirtColor', {
+            textShirt: textShirtData
+        })
+      });
+})
+
+let userInputText;
+app.post('/makeShirtColor', (req, res) => {
+	userInputText = JSON.stringify(req.body.textShirt)
+
+	fs.writeFile('textShirt.json', userInputText, 'utf8', cb => {
+		console.log('werk dan');
+	});
+
+	res.render('makeShirtColor', {
+		textShirt: userInputText
+	})
+})
+
+let userGender;
+app.post('/makeShirtText', (req, res) => {
+	userGender = JSON.stringify(req.body)
+
+	//fs.writeFile('textShirt.json', userInput, 'utf8', cb => {
+	//	console.log('werk dan');
+//	});
+
+	res.render('makeShirtText', {
+	//	textShirt: userInput
+	})
 })
 
 app.listen(port);
