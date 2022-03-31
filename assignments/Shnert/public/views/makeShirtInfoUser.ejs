@@ -47,10 +47,10 @@
             </g>
     </svg>    
 
-    <form action="/makeShirt1" method="GET">
+    <form action="/makeShirtText" method="GET">
         <h3>Gender</h3>
         <label for="gender">
-            <input type="radio" value="Male" name="gender">
+            <input type="radio" value="Male" name="gender" required>
             M
         </label><br>
 
@@ -62,7 +62,7 @@
 
         <h3>Size</h3>
         <label for="size">
-            <input type="radio" value="XS" name="size">
+            <input type="radio" value="XS" name="size" required>
             XS
         </label><br>
 
@@ -85,8 +85,10 @@
             <input type="radio" value="XL" name="size">
             XL
         </label><br>
-    </form>
 
-    <a href = "/makeShirtText">Next</a>
+        <a href = "/makeShirtText">
+            <input type="submit" value = "Next">
+        </a>
+    </form>
 </body>
 </html>

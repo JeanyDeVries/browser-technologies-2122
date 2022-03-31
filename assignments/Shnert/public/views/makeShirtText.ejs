@@ -47,14 +47,17 @@
             </g>
     </svg>    
 
-    <form action="/makeShirt1" method="GET">
+    <form action="/makeShirtColor" method="GET">
         <h3>Text</h3>
         <label for="text">
-            <input type="text" value="text" name="text">
+            <input type="text" value="text" name="text" required>
         </label><br>
+
+        <a href = "/makeShirtColor">
+            <input type="submit" value = "Next">
+        </a>
     </form>
 
     <a href = "/makeShirtInfoUser">Previous</a>
-    <a href = "/makeShirtColor">Next</a>
 </body>
 </html>
