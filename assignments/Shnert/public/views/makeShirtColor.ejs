@@ -4,19 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Document</title>
 </head>
 <body>
-    <h1>Home</h1>
-
-    <h2>Shirts</h2>
-    <div class = 'shirts'>
-    </div>
-
-    <h2>Make a shirt</h2>
+    <a href = "/">
+        <h1>Home</h1>
+    </a>
     
-    <a href='/makeShirtInfoUser'>
-        <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+    <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
             width="200pt" height="200pt" viewBox="0 0 1080.000000 720.000000"
             preserveAspectRatio="xMidYMid meet">
             <g transform="translate(0.000000,720.000000) scale(0.180000,-0.130000)"
@@ -50,7 +45,42 @@
             -400 l34 -47 -46 -33 c-26 -18 -50 -33 -55 -33 -19 0 -570 736 -570 761 0 7
             98 101 107 104 1 0 113 -159 249 -352z"/>
             </g>
-        </svg>    
-    </a>
+    </svg>    
+
+    <form action="/makeShirt1" method="GET">
+        <h3>Color</h3>
+        <br><label for="color">White</label>
+        <input type="button" value="white" name="color">
+
+        <br><label for="color">Black</label>
+        <input type="button" value="black" name="color">
+
+        <br><label for="color">Grey</label>
+        <input type="button" value="grey" name="color">
+
+        <br><label for="color">Red</label>
+        <input type="button" value="red" name="color">
+
+        <br><label for="color">Yellow</label>
+        <input type="button" value="yellow" name="color">
+
+        <br><label for="color">Orange</label>
+        <input type="button" value="orange" name="color">
+
+        <br><label for="color">Green</label>
+        <input type="button" value="green" name="color">
+
+        <br><label for="color">Blue</label>
+        <input type="button" value="blue" name="color">
+
+        <br><label for="color">Purple</label>
+        <input type="button" value="purple" name="color">
+
+        <br><label for="color">Pink</label>
+        <input type="button" value="pink" name="color">
+    </form>
+
+    <a href = "/makeShirtInfoText">Previous</a>
+    <a href = "/">SUBMIT</a>
 </body>
 </html>

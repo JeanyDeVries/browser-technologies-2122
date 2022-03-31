@@ -4,19 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Document</title>
 </head>
 <body>
-    <h1>Home</h1>
-
-    <h2>Shirts</h2>
-    <div class = 'shirts'>
-    </div>
-
-    <h2>Make a shirt</h2>
+    <a href = "/">
+        <h1>Home</h1>
+    </a>
     
-    <a href='/makeShirtInfoUser'>
-        <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+    <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
             width="200pt" height="200pt" viewBox="0 0 1080.000000 720.000000"
             preserveAspectRatio="xMidYMid meet">
             <g transform="translate(0.000000,720.000000) scale(0.180000,-0.130000)"
@@ -50,7 +45,15 @@
             -400 l34 -47 -46 -33 c-26 -18 -50 -33 -55 -33 -19 0 -570 736 -570 761 0 7
             98 101 107 104 1 0 113 -159 249 -352z"/>
             </g>
-        </svg>    
-    </a>
+    </svg>    
+
+    <form action="/makeShirt1" method="GET">
+        <h3>Text</h3>
+        <label for="gender">M</label><br>
+        <input type="text" value="text" name="text">
+    </form>
+
+    <a href = "/makeShirtInfoUser">Previous</a>
+    <a href = "/makeShirtColor">Next</a>
 </body>
 </html>

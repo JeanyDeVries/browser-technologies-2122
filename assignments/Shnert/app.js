@@ -10,7 +10,24 @@ app.get('/', function (req, res) {
     res.render('home', {
 
     })
-    //.catch(err => res.send(err))
   })
+
+app.get('/makeShirtInfoUser', function (req, res) {
+    res.render('makeShirtInfoUser', {
+
+    })
+})
+
+app.get('/makeShirtText', function (req, res) {
+    res.render('makeShirtText', {
+
+    })
+})
+
+app.get('/makeShirtColor', function (req, res) {
+    res.render('makeShirtColor', {
+
+    })
+})
 
 app.listen(port);
