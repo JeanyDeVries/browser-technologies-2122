@@ -23,13 +23,29 @@ app.get('/', function (req, res) {
     res.render('home', {})
   })
 
+
 app.get('/makeShirtInfoUser', function (req, res) {
     res.render('makeShirtInfoUser', {})
 })
 
+
 app.get('/makeShirtText', function (req, res) {
     res.render('makeShirtText', {})
 })
+
+let userInfo;
+app.post('/makeShirtText', (req, res) => {
+	userInfo = JSON.stringify(req.body)
+
+	fs.writeFile('infoUser.json', userInfo, 'utf8', cb => {
+		console.log('werk dan');
+	});
+
+	res.render('makeShirtText', {})
+})
+
+
+
 
 app.get('/makeShirtColor', function (req, res) {
 
@@ -53,19 +69,6 @@ app.post('/makeShirtColor', (req, res) => {
 
 	res.render('makeShirtColor', {
 		textShirt: userInputText
-	})
-})
-
-let userGender;
-app.post('/makeShirtText', (req, res) => {
-	userGender = JSON.stringify(req.body)
-
-	//fs.writeFile('textShirt.json', userInput, 'utf8', cb => {
-	//	console.log('werk dan');
-//	});
-
-	res.render('makeShirtText', {
-	//	textShirt: userInput
 	})
 })
 
