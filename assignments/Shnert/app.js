@@ -1,7 +1,7 @@
 import express from 'express';
 import { engine } from 'express-handlebars';
 import bodyParser from "body-parser";
-import fs from 'fs';
+import fs, { readFile } from 'fs';
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -24,39 +24,32 @@ app.get('/', function (req, res) {
   })
 
 let colorShirt;
-app.post('/', (req, res) => {
-	colorShirt = JSON.stringify(req.body)
+let newData = "";
+let userInfo;
+let textShirtData;
 
+
+app.post('/', (req, res) => {
+	let text;
+	let info;
+
+	colorShirt = JSON.stringify(req.body)
 	fs.writeFile('colorShirt.json', colorShirt, 'utf8', cb => {
 		console.log('shirt color not saved');
 	});
 
-	const path = './Shirts.json'
+	fs.readFile('infoUser.json', 'utf8', function (err, data) {
+		if (err) throw err;
+		info = JSON.parse(data);
+	})
+	fs.readFile('textShirt.json', 'utf8', function (err, data) {
+		if (err) throw err;
+		text = JSON.parse(data);
+	})
 
-	var newData = "";
-	try {
-	  if (fs.existsSync(path)) {
-		console.log("test")
-
-		var data = fs.readFileSync("Shirts.json");
-		var shirts = JSON.parse(data);
-	
-		shirt = {userInfo, textShirtData, colorShirt};
-		shirt = JSON.stringify(shirt);
-
-		shirts.push(shirt);
-	}
-	  else{
-		newData = {userInfo, textShirtData, colorShirt};
-		newData = JSON.stringify(newData)
-
-		fs.writeFile('Shirts.json', newData, 'utf8', cb => {
-			console.log('werk dan');
-		});
-	  }
-	}catch(err) {
-	  console.error(err)
-	}
+	setTimeout(function(){
+		saveShirt(info, text, colorShirt);
+	},50);
 
 	res.render('home', {})
 })
@@ -71,7 +64,6 @@ app.get('/makeShirtText', function (req, res) {
     res.render('makeShirtText', {})
 })
 
-let userInfo;
 app.post('/makeShirtText', (req, res) => {
 	userInfo = JSON.stringify(req.body)
 
@@ -84,7 +76,6 @@ app.post('/makeShirtText', (req, res) => {
 
 
 
-let textShirtData;
 app.get('/makeShirtColor', function (req, res) {
 
     fs.readFile('textShirt.json', 'utf8', function (err, data) {
@@ -109,5 +100,16 @@ app.post('/makeShirtColor', (req, res) => {
 		textShirt: userInputText
 	})
 })
+
+function saveShirt(info, text, color) {
+	newData = {info, text, color};
+	console.log(newData)
+	newData = JSON.stringify(newData)
+
+	fs.writeFile('Shirts.json', newData, 'utf8', cb => {
+		console.log('werk dan');
+	});
+  }
+  
 
 app.listen(port);
