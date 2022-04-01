@@ -28,8 +28,35 @@ app.post('/', (req, res) => {
 	colorShirt = JSON.stringify(req.body)
 
 	fs.writeFile('colorShirt.json', colorShirt, 'utf8', cb => {
-		console.log('werk dan');
+		console.log('shirt color not saved');
 	});
+
+	const path = './Shirts.json'
+
+	var newData = "";
+	try {
+	  if (fs.existsSync(path)) {
+		console.log("test")
+
+		var data = fs.readFileSync("Shirts.json");
+		var shirts = JSON.parse(data);
+	
+		shirt = {userInfo, textShirtData, colorShirt};
+		shirt = JSON.stringify(shirt);
+
+		shirts.push(shirt);
+	}
+	  else{
+		newData = {userInfo, textShirtData, colorShirt};
+		newData = JSON.stringify(newData)
+
+		fs.writeFile('Shirts.json', newData, 'utf8', cb => {
+			console.log('werk dan');
+		});
+	  }
+	}catch(err) {
+	  console.error(err)
+	}
 
 	res.render('home', {})
 })
@@ -57,12 +84,12 @@ app.post('/makeShirtText', (req, res) => {
 
 
 
-
+let textShirtData;
 app.get('/makeShirtColor', function (req, res) {
 
     fs.readFile('textShirt.json', 'utf8', function (err, data) {
         if (err) throw err;
-        let textShirtData = JSON.parse(data);
+        textShirtData = JSON.parse(data);
   
         res.render('makeShirtColor', {
             textShirt: textShirtData
