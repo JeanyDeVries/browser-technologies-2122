@@ -23,6 +23,17 @@ app.get('/', function (req, res) {
     res.render('home', {})
   })
 
+let colorShirt;
+app.post('/', (req, res) => {
+	colorShirt = JSON.stringify(req.body)
+
+	fs.writeFile('colorShirt.json', colorShirt, 'utf8', cb => {
+		console.log('werk dan');
+	});
+
+	res.render('home', {})
+})
+
 
 app.get('/makeShirtInfoUser', function (req, res) {
     res.render('makeShirtInfoUser', {})
