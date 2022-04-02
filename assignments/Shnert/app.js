@@ -116,10 +116,16 @@ app.post('/makeShirtColor', (req, res) => {
 })
 
 function saveShirt(info, text, color, res) {
+	var data = fs.readFileSync('shirts.json');
+	var currentShirts= [JSON.parse(data)];
+
 	newData = {info, text, color};
 	newData = JSON.stringify(newData)
 
-	fs.writeFile('shirts.json', newData, 'utf8', cb => {
+	currentShirts.push(newData);
+	currentShirts = JSON.stringify(currentShirts)
+
+	fs.writeFile('shirts.json', currentShirts, 'utf8', cb => {
 		console.log('werk dan');
 	});
 
