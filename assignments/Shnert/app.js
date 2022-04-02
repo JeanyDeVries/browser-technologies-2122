@@ -20,7 +20,15 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 
 app.get('/', function (req, res) {
-    res.render('home', {})
+
+	fs.readFile('shirts.json', 'utf8', function (err, data) {
+        if (err) throw err;
+        shirtsData = JSON.parse(data);
+  
+        res.render('home', {
+            shirts: shirtsData
+        })
+      });
   })
 
 let colorShirt;
@@ -46,12 +54,11 @@ app.post('/', (req, res) => {
 		if (err) throw err;
 		text = JSON.parse(data);
 	})
+	colorShirt = JSON.parse(colorShirt)
 
 	setTimeout(function(){
-		saveShirt(info, text, colorShirt);
+		saveShirt(info, text, colorShirt, res);
 	},50);
-
-	res.render('home', {})
 })
 
 
@@ -101,14 +108,18 @@ app.post('/makeShirtColor', (req, res) => {
 	})
 })
 
-function saveShirt(info, text, color) {
+function saveShirt(info, text, color, res) {
 	newData = {info, text, color};
-	console.log(newData)
 	newData = JSON.stringify(newData)
 
-	fs.writeFile('Shirts.json', newData, 'utf8', cb => {
+	fs.writeFile('shirts.json', newData, 'utf8', cb => {
 		console.log('werk dan');
 	});
+
+  
+	res.render('home', {
+		shirts: newData
+	})
   }
   
 
