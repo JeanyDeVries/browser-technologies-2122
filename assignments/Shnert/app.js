@@ -1,7 +1,7 @@
 import express from 'express';
 import { engine } from 'express-handlebars';
 import bodyParser from "body-parser";
-import fs, { readFile } from 'fs';
+import fs from 'fs';
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -23,7 +23,7 @@ app.get('/', function (req, res) {
 
 	fs.readFile('shirts.json', 'utf8', function (err, data) {
         if (err) throw err;
-        shirtsData = JSON.parse(data);
+        let shirtsData = JSON.parse(data);
   
         res.render('home', {
             shirts: shirtsData
@@ -68,7 +68,14 @@ app.get('/makeShirtInfoUser', function (req, res) {
 
 
 app.get('/makeShirtText', function (req, res) {
-    res.render('makeShirtText', {})
+	fs.readFile('textShirt.json', 'utf8', function (err, data) {
+        if (err) throw err;
+        let shirtsData = JSON.parse(data);
+  
+        res.render('makeShirtText', {
+            textShirt: shirtsData
+        })
+      });
 })
 
 app.post('/makeShirtText', (req, res) => {
