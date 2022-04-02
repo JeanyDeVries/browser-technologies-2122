@@ -45,7 +45,13 @@
         <input type="text" value="{{textShirt}}" name="textShirt" required>
     </label><br>
 
-    <input type="button" onclick="history.back();" value="Back">
+    {{#if ()}}
+        <input type="button" onclick="history.back();" value="Back">
+    {{else}}
+        <a href = "/makeShirtInfoUser" >
+            <input type="button"value="Back">
+        </a>
+    {{/if}}
     <a href = "/makeShirtColor">
         <input type="submit" value = "Next">
     </a>

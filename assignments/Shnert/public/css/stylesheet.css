@@ -1,0 +1,19 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0 auto;
+}
+
+html{
+    background-color: #A0B2B2;
+    max-width:max-content;
+}
+
+h1{
+    font-size: 3em;
+    font-weight: 800;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}

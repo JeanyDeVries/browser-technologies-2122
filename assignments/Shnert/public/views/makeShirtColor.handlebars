@@ -14,8 +14,7 @@
     <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
             width="200pt" height="200pt" viewBox="0 0 1080.000000 720.000000"
             preserveAspectRatio="xMidYMid meet">
-            <g transform="translate(0.000000,720.000000) scale(0.180000,-0.130000)"
-            fill="#000000" stroke="none">
+            <g transform="translate(0.000000,720.000000) scale(0.180000,-0.130000)" stroke="none">
             <path d="M0 3000 l0 -3000 3000 0 3000 0 0 3000 0 3000 -3000 0 -3000 0 0
             -3000z m3720 2675 l0 -25 -725 0 -725 0 0 25 0 25 725 0 725 0 0 -25z m-1540
             -49 c0 -72 29 -215 64 -318 93 -273 271 -462 512 -544 96 -32 270 -44 379 -25
@@ -95,7 +94,11 @@
             <input type="radio" value="pink" name="color">
         </label><br>
 
-        <input type="button" onclick="history.back();" value="Back">
+        {{#if history.back()}}
+             <input type="button" onclick="history.back();" value="Back">
+        {{else}}
+             <input type="button" href ="makeShirtText.handlebars" value="Back">
+        {{#/if}}
         <br><a href = "/">
             <input type="submit" value = "SUBMIT">
         </a>
