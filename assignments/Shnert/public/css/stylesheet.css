@@ -3,17 +3,29 @@
     text-align: center;
     background-color: #A0B2B2;
     margin: 0 auto;
-    flex: 1 1 59;
-    /* max-width:max-content; */
 }
 
 svg{
     display: block;
 }
 
+p, h1, h2, h3, h4{
+    color: white;
+}
+
+p{
+    font-weight: 200;
+}
+
 h1{
     font-size: 3em;
     font-weight: 800;
+}
+
+h2{
+    font-size: 2em;
+    font-weight: 600;
+    margin-top: 30px;
 }
 
 a{
@@ -24,7 +36,7 @@ a{
 
 nav{
     width: 100vw;
-    height: 100px;
+    height: 75px;
     background-color: #5E5E5E;
     display: flex;
     flex-direction: row;
@@ -33,10 +45,36 @@ nav{
 
 nav h1{
     background-color: #5E5E5E;
+    text-align: center;
 }
 
 nav a{
     position: absolute;
     right : 0;
     margin-right: 25px;
+}
+
+nav svg{
+    background-color: #5E5E5E;
+}
+
+.makeShirtBtn{
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    display: block;
+}
+
+.makeShirtBtn svg{
+    top: 50%;
+    -ms-transform: translateY(50%);
+    transform: translateY(15%);    
+    background-color: white;
+}
+
+.displayShirt{
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    display: block;
 }
