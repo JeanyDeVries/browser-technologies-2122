@@ -117,7 +117,12 @@ app.post('/makeShirtColor', (req, res) => {
 
 function saveShirt(info, text, color, res) {
 	var data = fs.readFileSync('shirts.json');
-	var currentShirts= [JSON.parse(data)];
+	var currentShirts;
+	try {
+		currentShirts = [JSON.parse(data)];
+    } catch (e) {
+		currentShirts = ''
+    }
 
 	newData = {info, text, color};
 	newData = JSON.stringify(newData)
