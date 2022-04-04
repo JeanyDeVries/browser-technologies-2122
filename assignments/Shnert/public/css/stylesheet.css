@@ -3,6 +3,8 @@
     text-align: center;
     background-color: #A0B2B2;
     margin: 0 auto;
+
+    overflow: hidden;
 }
 
 svg{
@@ -15,6 +17,12 @@ p, h1, h2, h3, h4{
 
 p{
     font-weight: 200;
+}
+
+body{
+    /*
+    width: 800px;
+    height: 600px; */
 }
 
 h1{
@@ -41,6 +49,7 @@ nav{
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
 }
 
 nav h1{
@@ -48,10 +57,17 @@ nav h1{
     text-align: center;
 }
 
+nav .homeBtn{
+    position: absolute;
+    right: auto;
+    margin-right: auto;
+}
+
 nav a{
     position: absolute;
     right : 0;
     margin-right: 25px;
+    fill:white;
 }
 
 nav svg{
