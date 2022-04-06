@@ -3,6 +3,7 @@
     text-align: center;
     background-color: #A0B2B2;
     margin: 0 auto;
+    padding: 0;
 }
 
 svg{
@@ -15,6 +16,9 @@ p, h1, h2, h3, h4{
 
 p{
     font-weight: 200;
+    color: black;
+    background-color: white;
+    font-weight: 400;
 }
 
 body{
@@ -77,13 +81,16 @@ nav svg{
     height: 200px;
     background-color: white;
     display: block;
+    border: black solid 2px;
+    margin-bottom: 20px;
 }
 
 .makeShirtBtn svg{
     top: 50%;
     -ms-transform: translateY(50%);
-    transform: translateY(15%);    
+    transform: translateY(15px);
     background-color: white;
+    transform: translateY(15px);
 }
 
 .displayShirt{
@@ -96,9 +103,26 @@ nav svg{
 .shirts{
     display: flex;
     flex-wrap: wrap;
+    margin-top: 20px;
 }
 
 .shirtDisplay{
     list-style: none;
     display: block;
+    height: 280px;
+    background-color: white;
+    margin-bottom: 40px;
+    margin-right: 20px;
+    margin-left: 20px;
+    border: black solid 2px;
+}
+
+.shirtDisplay svg{
+    width: 80%;
+    height: 70%;
+    background-color: white;
+}
+
+.shirtDisplay p{
+
 }
