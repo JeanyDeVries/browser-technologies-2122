@@ -92,3 +92,13 @@ nav svg{
     background-color: white;
     display: block;
 }
+
+.shirts{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.shirtDisplay{
+    list-style: none;
+    display: block;
+}
