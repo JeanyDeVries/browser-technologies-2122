@@ -23,10 +23,13 @@
     {{#if shirts}}
 
         {{#each shirts}}
+
+
             <li>
-                {{#shirts}}
-                    {{size}}
-                {{/shirts}}
+                <p>{{this.sizeUser.size}}</p>
+                <p>{{this.genderUser.gender}}</p>
+                <p>{{this.textShirt.text}}</p>
+                <p>{{this.colorShirt.color}}</p>
             </li>
         {{/each}}
 

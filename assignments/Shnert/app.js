@@ -20,7 +20,6 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 let colorShirt;
 let newData = "";
-let userInfo;
 let textShirtData;
 let textShirt;
 let genderUser;
@@ -33,7 +32,7 @@ app.get('/', function (req, res) {
 		let shirtsData = JSON.parse(data);
 		
 		res.render('home', {
-			shirts: shirtsData
+			shirts: shirtsData.shirts
 			})
 		});
   })
@@ -147,6 +146,8 @@ function saveShirt(genderUser, sizeUser, textShirt, colorShirt, res) {
 	});
 
 	//JSON.parse(currentShirts)
+
+	console.log(currentShirts)
 
 	res.render('home', {
 		shirts: currentShirts

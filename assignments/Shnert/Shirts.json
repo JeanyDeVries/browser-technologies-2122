@@ -1,1 +1,46 @@
-{"shirts":[{"genderUser":{"gender":"Male"},"sizeUser":{"size":"M"},"textShirt":{"text":"hoii"},"colorShirt":{"color":"purple"}},{"genderUser":{"gender":"Male"},"sizeUser":{"size":"M"},"textShirt":{"text":":)"},"colorShirt":{"color":"yellow"}}]}
+{
+    "shirts": [
+        {
+            "genderUser": {
+                "gender": "Male"
+            },
+            "sizeUser": {
+                "size": "M"
+            },
+            "textShirt": {
+                "text": "hoii"
+            },
+            "colorShirt": {
+                "color": "purple"
+            }
+        },
+        {
+            "genderUser": {
+                "gender": "Male"
+            },
+            "sizeUser": {
+                "size": "M"
+            },
+            "textShirt": {
+                "text": ":)"
+            },
+            "colorShirt": {
+                "color": "yellow"
+            }
+        },
+        {
+            "gender": {
+                "gender": "Male"
+            },
+            "size": {
+                "size": "M"
+            },
+            "text": {
+                "text": ":)"
+            },
+            "color": {
+                "color": "yellow"
+            }
+        }
+    ]
+}
