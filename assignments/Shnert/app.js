@@ -132,11 +132,7 @@ function saveShirt(genderUser, sizeUser, textShirt, colorShirt, res) {
 		currentShirts = ''
     }
 
-
 	newData = {gender: genderUser, size: sizeUser, text: textShirt, color: colorShirt}
-	// newData = JSON.stringify(newData)
-
-	console.log(newData)
 
 	currentShirts.shirts.push(newData);
 	currentShirts = JSON.stringify(currentShirts)
@@ -147,12 +143,9 @@ function saveShirt(genderUser, sizeUser, textShirt, colorShirt, res) {
 
 	currentShirts = JSON.parse(currentShirts)
 
-	console.log(currentShirts)
-
 	res.render('home', {
 		shirts: currentShirts.shirts
 	})
   }
-  
 
 app.listen(port);
