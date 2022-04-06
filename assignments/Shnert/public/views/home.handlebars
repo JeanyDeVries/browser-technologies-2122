@@ -19,11 +19,18 @@
 
 <h2>Shirts</h2>
 <div class = 'shirts'>
-        {{#if shirts}}
 
-        <p>{{{shirts}}}</p>
+    {{#if shirts}}
 
-        {{/if}}
+        {{#each shirts}}
+            <li>
+                {{#shirts}}
+                    {{size}}
+                {{/shirts}}
+            </li>
+        {{/each}}
+
+    {{/if}}
 </div>
 
 <h2>Make a shirt</h2>

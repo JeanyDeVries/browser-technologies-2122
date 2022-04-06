@@ -18,24 +18,21 @@ app.set('views', 'public/views');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-
-app.get('/', function (req, res) {
-
-	fs.readFile('shirts.json', 'utf8', function (err, data) {
-        if (err) throw err;
-        let shirtsData = JSON.parse(data);
-  
-        res.render('home', {
-            shirts: shirtsData
-        })
-      });
-  })
-
 let colorShirt;
 let newData = "";
 let userInfo;
 let textShirtData;
 
+app.get('/', function (req, res) {
+	fs.readFile('shirts.json', 'utf8', function (err, data) {
+		if (err) throw err;
+		let shirtsData = JSON.parse(data);
+	
+		res.render('home', {
+			shirts: shirtsData
+			})
+		});
+  })
 
 app.post('/', (req, res) => {
 	let text;
@@ -104,39 +101,42 @@ app.get('/makeShirtColor', function (req, res) {
 
 let userInputText;
 app.post('/makeShirtColor', (req, res) => {
-	userInputText = JSON.stringify(req.body.textShirt)
+	userInputText = JSON.stringify(req.body)
 
 	fs.writeFile('textShirt.json', userInputText, 'utf8', cb => {
 		console.log('werk dan');
 	});
 
 	res.render('makeShirtColor', {
-		textShirt: userInputText
+		//textShirt: userInputText
 	})
 })
 
 function saveShirt(info, text, color, res) {
 	var data = fs.readFileSync('shirts.json');
-	var currentShirts;
+	var currentShirts = data;
 	try {
-		currentShirts = [JSON.parse(data)];
+		currentShirts = JSON.parse(data);
     } catch (e) {
 		currentShirts = ''
     }
 
-	newData = {info, text, color};
-	newData = JSON.stringify(newData)
+	newData = {firstName: 'test', lastName: 'test'}
+	// newData = JSON.stringify(newData)
 
-	currentShirts.push(newData);
+	console.log(currentShirts)
+
+	currentShirts.shirts.push(newData);
 	currentShirts = JSON.stringify(currentShirts)
 
 	fs.writeFile('shirts.json', currentShirts, 'utf8', cb => {
 		console.log('werk dan');
 	});
 
-  
+	JSON.parse(currentShirts)
+
 	res.render('home', {
-		shirts: newData
+		shirts: currentShirts
 	})
   }
   
