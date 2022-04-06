@@ -145,12 +145,12 @@ function saveShirt(genderUser, sizeUser, textShirt, colorShirt, res) {
 		console.log('werk dan');
 	});
 
-	//JSON.parse(currentShirts)
+	currentShirts = JSON.parse(currentShirts)
 
 	console.log(currentShirts)
 
 	res.render('home', {
-		shirts: currentShirts
+		shirts: currentShirts.shirts
 	})
   }
   
