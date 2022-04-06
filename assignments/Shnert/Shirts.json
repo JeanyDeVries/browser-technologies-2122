@@ -1,1 +1,1 @@
-{"shirts":[{"firstName":"test","lastName":"test"}]}
+{"shirts":[{"genderUser":{"gender":"Male"},"sizeUser":{"size":"M"},"textShirt":{"text":"hoii"},"colorShirt":{"color":"purple"}},{"genderUser":{"gender":"Male"},"sizeUser":{"size":"M"},"textShirt":{"text":":)"},"colorShirt":{"color":"yellow"}}]}

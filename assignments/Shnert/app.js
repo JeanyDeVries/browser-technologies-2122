@@ -22,12 +22,16 @@ let colorShirt;
 let newData = "";
 let userInfo;
 let textShirtData;
+let textShirt;
+let genderUser;
+let sizeUser;
+
 
 app.get('/', function (req, res) {
 	fs.readFile('shirts.json', 'utf8', function (err, data) {
 		if (err) throw err;
 		let shirtsData = JSON.parse(data);
-	
+		
 		res.render('home', {
 			shirts: shirtsData
 			})
@@ -36,25 +40,31 @@ app.get('/', function (req, res) {
 
 app.post('/', (req, res) => {
 	let text;
-	let info;
+	let gender;
+	let size;
 
-	colorShirt = JSON.stringify(req.body)
+
+	colorShirt = JSON.stringify({color: req.body.color})
 	fs.writeFile('colorShirt.json', colorShirt, 'utf8', cb => {
 		console.log('shirt color not saved');
+		colorShirt = JSON.parse(colorShirt);
 	});
 
-	fs.readFile('infoUser.json', 'utf8', function (err, data) {
+	fs.readFile('size.json', 'utf8', function (err, data) {
 		if (err) throw err;
-		info = JSON.parse(data);
+		size = JSON.parse(data);
+	})
+	fs.readFile('gender.json', 'utf8', function (err, data) {
+		if (err) throw err;
+		gender = JSON.parse(data);
 	})
 	fs.readFile('textShirt.json', 'utf8', function (err, data) {
 		if (err) throw err;
 		text = JSON.parse(data);
 	})
-	colorShirt = JSON.parse(colorShirt)
 
 	setTimeout(function(){
-		saveShirt(info, text, colorShirt, res);
+		saveShirt(gender, size, text, colorShirt, res);
 	},50);
 })
 
@@ -76,9 +86,14 @@ app.get('/makeShirtText', function (req, res) {
 })
 
 app.post('/makeShirtText', (req, res) => {
-	userInfo = JSON.stringify(req.body)
+	genderUser = JSON.stringify({gender: req.body.gender})
+	sizeUser = JSON.stringify({size: req.body.size})
 
-	fs.writeFile('infoUser.json', userInfo, 'utf8', cb => {
+	fs.writeFile('gender.json', genderUser, 'utf8', cb => {
+		console.log('werk dan');
+	});
+
+	fs.writeFile('size.json', sizeUser, 'utf8', cb => {
 		console.log('werk dan');
 	});
 
@@ -99,20 +114,17 @@ app.get('/makeShirtColor', function (req, res) {
       });
 })
 
-let userInputText;
 app.post('/makeShirtColor', (req, res) => {
-	userInputText = JSON.stringify(req.body)
+	textShirt = JSON.stringify({text: req.body.textShirt})
 
-	fs.writeFile('textShirt.json', userInputText, 'utf8', cb => {
+	fs.writeFile('textShirt.json', textShirt, 'utf8', cb => {
 		console.log('werk dan');
 	});
 
-	res.render('makeShirtColor', {
-		//textShirt: userInputText
-	})
+	res.render('makeShirtColor', {})
 })
 
-function saveShirt(info, text, color, res) {
+function saveShirt(genderUser, sizeUser, textShirt, colorShirt, res) {
 	var data = fs.readFileSync('shirts.json');
 	var currentShirts = data;
 	try {
@@ -121,10 +133,11 @@ function saveShirt(info, text, color, res) {
 		currentShirts = ''
     }
 
-	newData = {firstName: 'test', lastName: 'test'}
+
+	newData = {gender: genderUser, size: sizeUser, text: textShirt, color: colorShirt}
 	// newData = JSON.stringify(newData)
 
-	console.log(currentShirts)
+	console.log(newData)
 
 	currentShirts.shirts.push(newData);
 	currentShirts = JSON.stringify(currentShirts)
@@ -133,7 +146,7 @@ function saveShirt(info, text, color, res) {
 		console.log('werk dan');
 	});
 
-	JSON.parse(currentShirts)
+	//JSON.parse(currentShirts)
 
 	res.render('home', {
 		shirts: currentShirts
