@@ -23,7 +23,7 @@ main {
 }
 
 section {
-    display: flex;
+    /*display: flex;*/
     /* background-color: var(--background-color); */
     width: 100%;
     max-width: 800px;
@@ -73,6 +73,10 @@ h2 {
     margin-top: 10px;
 }
 
+form{
+    border-radius: 25px;
+}
+
 form div {
     display: flex;
     flex-wrap: wrap;
@@ -106,11 +110,17 @@ input {
 label {
 
     /* display: block; */
+
     background-color: white;
+
     margin-right: 10px;
+
     margin-left: 10px;
-    vertical-align: middle;
+
     padding: 5px;
+
+    display: block;
+
     /* align-self: center; */
 }
 
@@ -227,15 +237,42 @@ nav svg {
     width: 100px;
     border: 0;
     font-size: 1.5em;
+    margin-bottom: 10px;
 }
 
-.buttonCartInput{
+.buttonCartInput {
     width: 100px;
     border: 0;
     font-size: 0.8em;
     border: #5E5E5E 1px solid;
 }
 
-.cartBtn{
+.cartBtn {
     background-color: white;
+}
+
+.textInput {
+
+    display: block;
+
+    width: 80%;
+
+    height: 20px;
+
+    margin-bottom: 20px;
+
+    background-color: lightgray;
+
+    /* align-self: center; */
+}
+
+.textLabel{
+    background-color: #A0B2B2;
+    color:white
+}
+
+.formInfo {
+    background-color: #A0B2B2;
+    /* margin-top: 10px; */
+    /* display: inline-grid; */
 }

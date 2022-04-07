@@ -39,17 +39,26 @@
             {{/if}}
         </div>
 
-         <form method="post" enctype="application/x-www-form-urlencoded" action="/">
+         <form method="post" enctype="application/x-www-form-urlencoded" action="/thankOrder">
             <h3>Information</h3>
-            <label for="text">
-                <input type="text" value="" name="First name" required>
-                <input type="text" value="" name="Last name" required>
-                <input type="text" value="" name="Phone number" required>
-                <input type="email" value="" name="Mail" required>
-                <input type="text" value="" name="Adress" required>
+            <label class = "formInfo" for="text">
+                <p class = "textLabel">First name</p>
+                <input class = "textInput" type="text" value="" name="First name" required>
+
+                <p class = "textLabel">Last name</p>
+                <input class = "textInput" type="text" value="" name="Last name" required>
+
+                <p class = "textLabel">Phone number</p>
+                <input class = "textInput"  type="text" value="" name="Phone number" required>
+
+                <p class = "textLabel">Mail</p>
+                <input class = "textInput" type="email" value="" name="Mail" required>
+
+                <p class = "textLabel">Adress</p>
+                <input class = "textInput" type="text" value="" name="Adress" required>
             </label><br>
 
-            <a href = "/makeShirtColor">
+            <a href = "/thankOrder">
                 <input class = "buttonInput" type="submit" value = "Buy">
             </a>
         </form>

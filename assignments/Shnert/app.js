@@ -84,7 +84,23 @@ app.post('/cart', function (req, res) {
 	addToCart(req.body, res)
 })
 
+app.get('/thankOrder', function (req, res) {
+    res.render('thankOrder', {})
+})
 
+app.post('/thankOrder', function (req, res) {
+	var shoppingList = fs.readFileSync('shoppingList.json');
+	shoppingList = JSON.parse(shoppingList);
+
+	shoppingList.items = []
+	shoppingList = JSON.stringify(shoppingList)
+
+	fs.writeFile('shoppingList.json', shoppingList, 'utf8', cb => {
+		console.log('werk dan');
+	});
+	
+    res.render('thankOrder', {})
+})
 
 app.get('/makeShirtInfoUser', function (req, res) {
     res.render('makeShirtInfoUser', {})
