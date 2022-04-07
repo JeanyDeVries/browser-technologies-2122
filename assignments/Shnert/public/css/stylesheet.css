@@ -4,6 +4,7 @@
     background-color: #A0B2B2;
     margin: 0 auto;
     padding: 0;
+    /* border-radius: 25px; */
     /* margin-bottom: 5px; */
     }
 
@@ -29,7 +30,7 @@ section{
     flex-wrap: wrap;
     /* box-shadow: 0px 0px 7px 0px #d6d6d6; */
     margin-top: 25px;
-    /* margin-bottom: 25px; */
+    margin-bottom: 25px;
     /* border: solid white 5px; */
     border-radius: 25px;
     }
@@ -81,7 +82,14 @@ a input{
 input{
     /* margin-right: 20px; */
     /* margin-bottom: 20px; */
-/* width: 100%; *//* height: 100%; */display: hidden;align-self: center;visibility: hidden;position: absolute;/* padding: 50px; */}
+    /* width: 100%; */
+    /* height: 100%; */
+    display: hidden;
+    align-self: center;
+    /* visibility: hidden; */
+    /* position: absolute; */
+    /* padding: 50px; */
+    }
 
 label{
 
@@ -126,7 +134,7 @@ nav h1{
     }
 
 nav .homeBtn{
-    position: absolute;
+    /* position: absolute; */
     right: auto;
     margin-right: auto;
 }
@@ -163,7 +171,9 @@ nav svg{
     width: 100%;
     height: 300px;
     display: block;
-margin-bottom: 10px;}
+    margin-bottom: 10px;
+    margin-top: 10px;
+    }
 
 .shirts{
     display: flex;
@@ -175,7 +185,7 @@ margin-bottom: 10px;}
 .shirtDisplay{
     list-style: none;
     display: block;
-    height: 300px;
+    height: 280px;
     background-color: white;
     margin-bottom: 40px;
     margin-right: 31px;
@@ -189,6 +199,8 @@ margin-bottom: 10px;}
     background-color: white;
 }
 
-.shirtDisplay p{
-
+.buttonInput{    
+    width: 100px;    
+    border: 0;
+    font-size: 1.5em;
 }
