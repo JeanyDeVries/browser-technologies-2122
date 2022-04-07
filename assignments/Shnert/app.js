@@ -71,11 +71,12 @@ app.get('/cart', function (req, res) {
 	
     fs.readFile('shoppingList.json', 'utf8', function (err, data) {
         if (err) throw err;
-        shoppingList = JSON.parse(data);
-  
-        res.render('cart', {
-            shirts: currentShirts.shirts
-        })
+        let shoppingList = JSON.parse(data);
+
+		res.render('cart', {
+			shirts: shoppingList.items,
+			id: Date.now()
+		})
       });
 })
 
