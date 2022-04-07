@@ -229,6 +229,13 @@ nav svg {
     font-size: 1.5em;
 }
 
+.buttonCartInput{
+    width: 100px;
+    border: 0;
+    font-size: 0.8em;
+    border: #5E5E5E 1px solid;
+}
+
 .cartBtn{
     background-color: white;
 }

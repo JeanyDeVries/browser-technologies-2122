@@ -62,7 +62,7 @@
                         <p>color: {{this.color.color}}</p>
                         <form class = "cartBtn" method="POST" enctype="application/x-www-form-urlencoded" action="/cart">
                             <a href = "/cart">
-                                <input class = "buttonInput" type = "submit" type="buy">
+                                <input class = "buttonCartInput" value = "Add to cart" type = "submit" type="buy">
                                 <input type ="hidden" value = {{this.id}} name = "id"> <!--Use ID as value, if you use shirt the object will be read as a string-->
                             </a>   
                         </form>                     

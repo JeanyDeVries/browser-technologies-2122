@@ -1,1 +1,34 @@
-{"shirts":[{"gender":{"gender":"Male"},"size":{"size":"M"},"text":{"text":":p"},"color":{"color":"pink"},"id":1649327217742},{"gender":{"gender":"Male"},"size":{"size":"M"},"text":{"text":":)"},"color":{"color":"orange"},"id":1649327235963}]}
+{
+    "shirts": [
+        {
+            "gender": {
+                "gender": "Male"
+            },
+            "size": {
+                "size": "M"
+            },
+            "text": {
+                "text": ":p"
+            },
+            "color": {
+                "color": "pink"
+            },
+            "id": 1649327217742
+        },
+        {
+            "gender": {
+                "gender": "Male"
+            },
+            "size": {
+                "size": "M"
+            },
+            "text": {
+                "text": ":)"
+            },
+            "color": {
+                "color": "orange"
+            },
+            "id": 1649327235963
+        }
+    ]
+}
