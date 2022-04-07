@@ -1,7 +1,7 @@
 <main>
     <section>
         <nav>
-            <a  class = "shoppingCart" href = "">
+            <a  class = "shoppingCart" href = "/cart">
                 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                 width="45px" height="45px" viewBox="0 0 902.86 902.86"
                 xml:space="preserve"><g><g>
@@ -36,7 +36,7 @@
             </a>
         </div>
 
-        <div>
+        <div style = "border-radius: 25px;">
 
             <h2>Shirts</h2>
 
@@ -60,6 +60,11 @@
                         <p>gender: {{this.gender.gender}}</p>
                         <p>text: {{this.text.text}}</p>
                         <p>color: {{this.color.color}}</p>
+                        <form class = "cartBtn" method="POST" enctype="application/x-www-form-urlencoded" action="/cart">
+                            <a href = "/cart">
+                                <input type="submit" value = {{this}} name = "item">   <!--Use ID as value, if you use shirt the object will be read as a string-->
+                            </a>   
+                        </form>                     
                         <br><br><br>
                     </li>
                 {{/each}}

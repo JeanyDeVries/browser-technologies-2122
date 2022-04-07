@@ -67,6 +67,16 @@ app.post('/', (req, res) => {
 	},50);
 })
 
+app.get('/cart', function (req, res) {
+	res.render('cart', {
+	})
+})
+
+app.post('/cart', function (req, res) {
+	addToCart(req.body.item, res)
+})
+
+
 
 app.get('/makeShirtInfoUser', function (req, res) {
     res.render('makeShirtInfoUser', {})
@@ -147,5 +157,31 @@ function saveShirt(genderUser, sizeUser, textShirt, colorShirt, res) {
 		shirts: currentShirts.shirts
 	})
   }
+
+function addToCart(newShirt, res){
+	var data = fs.readFileSync('shoppingList.json');
+	var currentList = data;
+	try {
+		currentList = JSON.parse(data);
+    } catch (e) {
+		currentList = ''
+    }
+
+	let newItem = {shirt: newShirt}
+	console.log(newShirt)
+
+	currentList.items.push(newItem);
+	currentList = JSON.stringify(currentList)
+
+	fs.writeFile('shoppingList.json', currentList, 'utf8', cb => {
+		console.log('werk dan');
+	});
+
+	currentList = JSON.parse(currentList)
+
+	res.render('cart', {
+		shirts: currentList.items
+	})
+}
 
 app.listen(port);
