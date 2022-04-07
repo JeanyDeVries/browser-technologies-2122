@@ -68,12 +68,19 @@ app.post('/', (req, res) => {
 })
 
 app.get('/cart', function (req, res) {
-	res.render('cart', {
-	})
+	
+    fs.readFile('shoppingList.json', 'utf8', function (err, data) {
+        if (err) throw err;
+        shoppingList = JSON.parse(data);
+  
+        res.render('cart', {
+            shirts: currentShirts.shirts
+        })
+      });
 })
 
 app.post('/cart', function (req, res) {
-	addToCart(req.body.item, res)
+	addToCart(req.body, res)
 })
 
 
@@ -142,7 +149,7 @@ function saveShirt(genderUser, sizeUser, textShirt, colorShirt, res) {
 		currentShirts = ''
     }
 
-	newData = {gender: genderUser, size: sizeUser, text: textShirt, color: colorShirt}
+	newData = {gender: genderUser, size: sizeUser, text: textShirt, color: colorShirt, id: Date.now()}
 
 	currentShirts.shirts.push(newData);
 	currentShirts = JSON.stringify(currentShirts)
@@ -154,33 +161,36 @@ function saveShirt(genderUser, sizeUser, textShirt, colorShirt, res) {
 	currentShirts = JSON.parse(currentShirts)
 
 	res.render('home', {
-		shirts: currentShirts.shirts
+		shirts: currentShirts.shirts,
+		id: Date.now()
 	})
   }
 
-function addToCart(newShirt, res){
-	var data = fs.readFileSync('shoppingList.json');
-	var currentList = data;
-	try {
-		currentList = JSON.parse(data);
-    } catch (e) {
-		currentList = ''
-    }
+function addToCart(id, res){
+	var shirts = fs.readFileSync('shirts.json');
+	shirts = JSON.parse(shirts);
 
-	let newItem = {shirt: newShirt}
-	console.log(newShirt)
+	var shoppingList = fs.readFileSync('shoppingList.json');
+	shoppingList = JSON.parse(shoppingList);
 
-	currentList.items.push(newItem);
-	currentList = JSON.stringify(currentList)
+	shirts.shirts.forEach(shirt => {
+		if(shirt.id == id.id)
+		{
+			shoppingList.items.push(shirt)
+		}
+	});
+	
+	shoppingList = JSON.stringify(shoppingList)
 
-	fs.writeFile('shoppingList.json', currentList, 'utf8', cb => {
+	fs.writeFile('shoppingList.json', shoppingList, 'utf8', cb => {
 		console.log('werk dan');
 	});
 
-	currentList = JSON.parse(currentList)
+	shoppingList = JSON.parse(shoppingList)
 
 	res.render('cart', {
-		shirts: currentList.items
+		shirts: shoppingList.items,
+		id: Date.now()
 	})
 }
 
