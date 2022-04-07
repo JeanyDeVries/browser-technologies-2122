@@ -4,7 +4,8 @@
     background-color: #A0B2B2;
     margin: 0 auto;
     padding: 0;
-margin-bottom: 5px;}
+    /* margin-bottom: 5px; */
+    }
 
 html{
     background-color: rgb(239 239 239);;
@@ -26,9 +27,12 @@ section{
     max-width: 800px;
     justify-content: center;
     flex-wrap: wrap;
-    
     /* box-shadow: 0px 0px 7px 0px #d6d6d6; */
-margin-top: 25px;/* margin-bottom: 25px; *//* border: solid white 5px; */border-radius: 25px;}
+    margin-top: 25px;
+    /* margin-bottom: 25px; */
+    /* border: solid white 5px; */
+    border-radius: 25px;
+    }
 
 svg{
     display: block;
@@ -105,14 +109,21 @@ nav{
 }
 
 .shoppingCart{
+    /* margin-bottom: 0px; */
     float: right;
-/* padding-bottom: 63px; *//* margin-top: -56px; */}
+    /* margin-right: 0px; */
+    /* padding-bottom: 0px; */
+    margin-top: 15px;
+    }
 
 nav h1{
     background-color: #5E5E5E;
     margin:0 auto;
-    /* text-align: center; */
-margin-top: 20px;/* align-self: center; */}
+    text-align: center;
+    margin-top: 20px;
+    width: 80%;
+    /* align-self: center; */
+    }
 
 nav .homeBtn{
     position: absolute;
