@@ -149,12 +149,15 @@ app.get('/makeShirtColor', function (req, res) {
 
 app.post('/makeShirtColor', (req, res) => {
 	textShirt = JSON.stringify({text: req.body.textShirt})
+	var text = JSON.parse(textShirt)
 
 	fs.writeFile('textShirt.json', textShirt, 'utf8', cb => {
 		console.log('werk dan');
 	});
 
-	res.render('makeShirtColor', {})
+	res.render('makeShirtColor', {
+		textShirt: text.text
+	})
 })
 
 function saveShirt(genderUser, sizeUser, textShirt, colorShirt, res) {
@@ -209,6 +212,10 @@ function addToCart(id, res){
 		shirts: shoppingList.items,
 		id: Date.now()
 	})
+}
+
+function seeShirt(){
+
 }
 
 app.listen(port);
