@@ -6,7 +6,13 @@
 - [Wireframe](#Wireframe)
 - [Core functionality](#Core)
   - [Code explanation](#Code)
+- [Support](#Support)
 - [Browsers](#Browsers)
+  - [Chrome](#Chrome)
+  - [Safari](#Safari)
+  - [Safari IOS](#IOS)
+  - [Firefox](#Firefox)
+  - [Internet Explorer](#IE)
 - [Issues](#Issues)
 
 ## Description
@@ -78,7 +84,19 @@ When we go to a set we have the GET request of the site. We then want to display
   })
 ```
   
+## Support  <a name="Support">
+  
 ## Browsers <a name="Browsers">
+  
+  ### Chrome <a name="Chrome">
+   
+  ### Safari <a name="Safari">
+  
+  ### Safara IOS <a name="IOS">
+  
+  ### Firefox <a name="Firefox">
+  
+  ### Internet explorer <a name="IE">
   
 ## Issues <a name="Issues">
 If you see any issues in my code or spots that need improvements let me know. You can file an issue in this repository. Thank you!
