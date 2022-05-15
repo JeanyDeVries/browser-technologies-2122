@@ -231,7 +231,7 @@ nav svg {
     vertical-align: middle;
     width: 100px;
     text-align: center;
-    overflow-wrap: anywhere;
+    overflow-wrap: break-word;
 }
 
 .displayShirt {

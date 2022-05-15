@@ -17,6 +17,7 @@ if(radioButtons){
     radioButtons.forEach(element => {
         element.addEventListener('click', () => {
             console.log(element.value)
+            // In Internet Explorer 7 and earlier, setAttribute doesn't set styles and removes events when you try to set them.
             shirtMain1.setAttribute('fill', element.value)   
             shirtMain2.setAttribute('fill', element.value)   
             shirtMain3.setAttribute('fill', element.value)   

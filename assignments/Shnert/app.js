@@ -214,8 +214,4 @@ function addToCart(id, res){
 	})
 }
 
-function seeShirt(){
-
-}
-
 app.listen(port);
