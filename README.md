@@ -136,8 +136,7 @@ To make sure I get the inline block if flex is not supported, I added a fallback
   
   The other issue is the SVG's. The thing that went wrong, which is the width and the height in the css. I gave it width:100% and height 100%. But that didn't work. So I changed it to pixel sizes which did the trick. 
   
-  <img src="https://user-images.githubusercontent.com/44086608/168642938-45abc427-0454-4e84-ba73-932195846e01.png" width="400">
-
+  
 The last issue was with the javascript. I added a way that the text changes when you are typing plus that the color changes. After some time I found out that arrow functions are not supported. So I rechanged my code without arrow functions and that did the trick!
 
   
