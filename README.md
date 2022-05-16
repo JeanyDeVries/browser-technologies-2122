@@ -87,10 +87,20 @@ When we go to a set we have the GET request of the site. We then want to display
 ## Support  <a name="Support">
   
 ## Browsers <a name="Browsers">
+To make the site accesability for every users, we need it to work on every browser. I made a list of every browser I where I want the app to work. 
   
   ### Chrome <a name="Chrome">
+  Chrome is the browser I worked on to make the app. You can see this as the "perfect" browser. Everything is supported. 
    
   ### Safari <a name="Safari">
+  Safari on the other hand is a bit more difficult. A lot is not supported. I use the older version 5.1.4. This is how it looks now:
+  <img src="https://user-images.githubusercontent.com/44086608/168582491-711a8f22-6561-4728-8e89-7996adc0d76f.png" width="400">
+  <img src="https://user-images.githubusercontent.com/44086608/168582578-fda23cef-ce9f-44ce-a9f1-07737f027073.png" width="400">
+  
+  A few things are going wrong. First the background is not white. After checking the main/html and * are not supported for css so I have to make a work-around. Flex is also not supported, but as a default it goes back to inline block which works as well. I can make a fallback just to make sure it works. The last thing is that svg's are not working correctly. After checking the support, I think it goes wrong because I use viewboxes, sadly that isn't supported very greatly. 
+  
+
+
   
   ### Safara IOS <a name="IOS">
   
