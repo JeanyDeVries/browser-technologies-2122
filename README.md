@@ -94,6 +94,7 @@ To make the site accesability for every users, we need it to work on every brows
    
   ### Safari <a name="Safari">
   Safari on the other hand is a bit more difficult. A lot is not supported. I use the older version 5.1.4. This is how it looks now:
+  
   <img src="https://user-images.githubusercontent.com/44086608/168582491-711a8f22-6561-4728-8e89-7996adc0d76f.png" width="400">
   <img src="https://user-images.githubusercontent.com/44086608/168582578-fda23cef-ce9f-44ce-a9f1-07737f027073.png" width="400">
   
@@ -137,15 +138,16 @@ To make sure I get the inline block if flex is not supported, I added a fallback
   The other issue is the SVG's. The thing that went wrong, which is the width and the height in the css. I gave it width:100% and height 100%. But that didn't work. So I changed it to pixel sizes which did the trick. 
   
   
-The last issue was with the javascript. I added a way that the text changes when you are typing plus that the color changes. After some time I found out that arrow functions are not supported. So I rechanged my code without arrow functions and that did the trick!
+The last issue was with the javascript. I added a way that the text changes when you are typing plus that the color changes. After some time I found out that arrow functions are not supported. So I rechanged my code without arrow functions, but sadly still doesn't work. 
+  
+I found out that Internet Explorer isn't perfect but the main functionality is still there and I made as many changes as possible. 
 
   
   ### Safara IOS <a name="IOS">
   
   ### Firefox <a name="Firefox">
   
-  ### Internet explorer <a name="IE">
-  
+    
 ## Issues <a name="Issues">
 If you see any issues in my code or spots that need improvements let me know. You can file an issue in this repository. Thank you!
 
