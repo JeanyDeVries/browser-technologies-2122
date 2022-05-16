@@ -115,6 +115,7 @@ To make sure I get the inline block if flex is not supported, I added a fallback
   ```
   
   The other issue was the backgound. I first thought it was because the main element wasn't supported but I was wrong. I opened the dev tools in safari and the first thing I saw was this: 
+  
   ![image](https://user-images.githubusercontent.com/44086608/168593413-2320e641-cdf6-4143-9aee-5818e7b32f8d.png)
 
   I then changed the color to rgb and that worked. Sadly it still didn't work. That is because flex doesn't work and @support doesn't work as well in the older safari. That means that it doesn't have a display. So I changed the support the other way around so that the default is inline block and that worked!
@@ -133,8 +134,11 @@ To make sure I get the inline block if flex is not supported, I added a fallback
     } 
   ```
   
-  The last issue is the SVG's. 
+  The other issue is the SVG's. The thing that went wrong, which is the width and the height in the css. I gave it width:100% and height 100%. But that didn't work. So I changed it to pixel sizes which did the trick. 
+  
+  <img src="https://user-images.githubusercontent.com/44086608/168642938-45abc427-0454-4e84-ba73-932195846e01.png" width="400">
 
+The last issue was with the javascript. I added a way that the text changes when you are typing plus that the color changes. After some time I found out that arrow functions are not supported. So I rechanged my code without arrow functions and that did the trick!
 
   
   ### Safara IOS <a name="IOS">
