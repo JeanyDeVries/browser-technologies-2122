@@ -8,19 +8,23 @@
 
 html {
     background-color: rgb(239 239 239);
-    ;
 }
 
 main {
-    display: flex;
+    display: inline-block;
     width: 100%;
-    background: rgb(239 239 239);
+    background: white;
 }
+
+@supports (display: flex) {
+    main {
+      display: flex;
+    }
+  }
 
 section {
     width: 100%;
     max-width: 900px;
-    justify-content: center;
     flex-wrap: wrap;
     margin-top: 25px;
     margin-bottom: 25px;
@@ -70,6 +74,12 @@ form div {
     align-items: center;
     justify-content: center;
 }
+
+@supports not (display: flex) {
+    form div {
+      display: inline-block;
+    }
+  }
 
 form a {
     margin-top: 20px;
