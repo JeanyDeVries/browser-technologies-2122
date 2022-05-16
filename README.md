@@ -99,6 +99,20 @@ To make the site accesability for every users, we need it to work on every brows
   
   A few things are going wrong. First the background is not white. After checking the main/html and * are not supported for css so I have to make a work-around. Flex is also not supported, but as a default it goes back to inline block which works as well. I can make a fallback just to make sure it works. The last thing is that svg's are not working correctly. After checking the support, I think it goes wrong because I use viewboxes, sadly that isn't supported very greatly. 
   
+To make sure I get the inline block if flex is not supported, I added a fallback with a display: inline block. 
+  ```
+    @supports not (display: flex) {
+      main {
+        display: inline-block;
+      }
+    }
+  
+    @supports not (display: flex) {
+      form div {
+        display: inline-block;
+      }
+    }
+  ```
 
 
   
