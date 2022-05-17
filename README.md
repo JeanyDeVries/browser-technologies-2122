@@ -6,13 +6,11 @@
 - [Wireframe](#Wireframe)
 - [Core functionality](#Core)
   - [Code explanation](#Code)
-- [Support](#Support)
 - [Browsers](#Browsers)
   - [Chrome](#Chrome)
   - [Safari](#Safari)
   - [Safari IOS](#IOS)
   - [Firefox](#Firefox)
-  - [Internet Explorer](#IE)
 - [Issues](#Issues)
 
 ## Description
@@ -83,9 +81,7 @@ When we go to a set we have the GET request of the site. We then want to display
     });
   })
 ```
-  
-## Support  <a name="Support">
-  
+    
 ## Browsers <a name="Browsers">
 To make the site accesability for every users, we need it to work on every browser. I made a list of every browser I where I want the app to work. 
   
@@ -144,9 +140,12 @@ I found out that Internet Explorer isn't perfect but the main functionality is s
 
   
   ### Safara IOS <a name="IOS">
+  On IOS it works perfectly as well, because of the changes I did for the old safari version. The arrow functions are for example also not supported on safari IOS, but I already fixed that. 
   
   ### Firefox <a name="Firefox">
-  
+  The same counts for firefox. Everything works and if it doesn't I already made a fallback because of safari. 
+  <img src="https://user-images.githubusercontent.com/44086608/168817199-c03f3158-8429-4e33-b27a-f0e87e7d40cf.png" width="400">
+
     
 ## Issues <a name="Issues">
 If you see any issues in my code or spots that need improvements let me know. You can file an issue in this repository. Thank you!
