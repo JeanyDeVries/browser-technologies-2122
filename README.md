@@ -140,7 +140,11 @@ I found out that Internet Explorer isn't perfect but the main functionality is s
 
   
   ### Safara IOS <a name="IOS">
-  On IOS it works perfectly as well, because of the changes I did for the old safari version. The arrow functions are for example also not supported on safari IOS, but I already fixed that. 
+  On IOS it works perfectly as well, because of the changes I did for the old safari version. The arrow functions are for example also not supported on safari IOS, but I already fixed that. The only thing I maybe want to have changed if I have more time is making a different display for phone. 
+  
+  <img src="https://user-images.githubusercontent.com/44086608/168818451-ca921c97-7492-48dd-af41-12ddb182aab3.png" height="400">
+  <img src="https://user-images.githubusercontent.com/44086608/168818512-a72bef39-b6c4-42da-84bd-88859cb61a82.png" height="400">
+
   
   ### Firefox <a name="Firefox">
   The same counts for firefox. Everything works and if it doesn't I already made a fallback because of safari. 
